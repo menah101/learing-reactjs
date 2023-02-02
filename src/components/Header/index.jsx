@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import Register from 'features/Auth/components/Register';
 
 const useStyles = makeStyles((theme) => ({
@@ -46,18 +45,14 @@ export default function Header() {
         <Toolbar>
           <CodeIcon className={classes.menuButton} />
           <Typography variant="h6" className={classes.title}>
-            <Link className={classes.link} to="/">EZ SHOP</Link>
+            <Link className={classes.link} to="/">MANGO SHOP</Link>
           </Typography>
-          <Button color="inherit">Todos</Button>
-          <Button color="inherit">Albums</Button>
-          <Button color="inherit" onClick={handleClickOpen}>Register</Button>
+          <Button color="inherit" onClick={handleClickOpen}>Đăng ký</Button>
         </Toolbar>
       </AppBar>
       <Dialog disableEscapeKeyDown open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogContent>
-          <DialogContentText>
-            <Register />
-          </DialogContentText>
+        <Register />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
