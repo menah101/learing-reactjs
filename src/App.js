@@ -1,11 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-import TodoFeature from './features/Todo';
+import { useEffect } from 'react';
+import productApi from 'api/productApi';
+import Header from 'components/Header';
 
 function App() {
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const params = {
+        _limit: 10,
+      };
+      const productList = await productApi.getAll(params);
+      console.log('productList', productList);
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div className="App">
-     <TodoFeature />
+      <Header />
     </div>
   );
 }
